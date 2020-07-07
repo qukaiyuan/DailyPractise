@@ -1,0 +1,11 @@
+{
+  "name": "fivetest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "sass --watch css/style.scss:css/style.css"
+  },
+  "author": "",
+  "license": "ISC"
+}

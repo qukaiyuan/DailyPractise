@@ -1,0 +1,46 @@
+* {
+  touch-action: none;
+}
+
+body,
+html {
+  background-color: #fff;
+  color: #333;
+}
+
+li {
+  list-style: none;
+}
+
+.hm-main-bar {
+  background: #fff;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  transition: -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  box-shadow: 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.hm-container {
+  background-color: #fff;
+  width: calc(100% - 20px);
+  margin: 0 auto;
+}
+.hm-container .mui-search {
+  margin-top: 10px;
+}
+.hm-container input[type=search] {
+  background-color: #fff;
+  border: 0.5px solid #ddd;
+}
+
+.hm-banner-swiper {
+  position: relative;
+  width: 100%;
+}
+
+.swiper-slide img {
+  width: 100%;
+}
+
+/*# sourceMappingURL=style.css.map */

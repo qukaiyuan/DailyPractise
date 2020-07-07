@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../lib/swiper5/swiper.min.css" rel="stylesheet" />
+		<link href="../css/style.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">首页</h1>
+		</header>
+		
+		<div class="mui-content hm-container">
+			<div class="mui-input-row mui-search">
+				<input type="search" class="mui-input-clear" placeholder="">
+			</div>
+		</div>
+		
+		<div class="swiper-container hm-banner-swiper">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><a href=""><img src="../img/1.jpeg" alt=""></a></div>
+				<div class="swiper-slide"><a href=""><img src="../img/2.jpg" alt=""></a></div>
+				<div class="swiper-slide"><a href=""><img src="../img/3.jpg" alt=""></a></div>
+			</div>
+			<div class="swiper-pagination hm-banner-pagination"></div>
+		</div>
+		
+		<script src="../js/mui.min.js"></script>
+		<script src="../lib/swiper5/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init()
+			
+			var bannerSwiper = new Swiper('.hm-banner-swiper', {
+				autoplay: {
+					delay: 5000,
+					stopOnLastSlide: false,
+					disableOnInteraction: false,
+				},
+				loop: true,
+				pagination: {
+					el: '.hm-banner-pagination',
+				}
+			})
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+	</head>
+	<body>
+
+		<div class="mui-content"></div>
+
+		<nav class="mui-bar mui-bar-tab hm-main-bar" id="hm-bar">
+
+
+			<a href="pages/home.html" class="mui-tab-item mui-active">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">
+					首页
+				</span>
+			</a>
+
+			<a href="pages/list.html" class="mui-tab-item">
+				<span class="mui-icon mui-icon-list"></span>
+				<span class="mui-tab-label">
+					列表
+				</span>
+			</a>
+
+
+			<a href="pages/discover.html" class="mui-tab-item">
+				<span class="mui-icon mui-icon-spinner mui-spin"></span>
+				<span class="mui-tab-label">
+					发现
+				</span>
+			</a>
+
+			<a href="pages/message.html" class="mui-tab-item">
+				<span class="mui-icon mui-icon-chatbubble"></span>
+				<span class="mui-tab-label">
+					对话
+				</span>
+			</a>
+
+			<a href="pages/profile.html" class="mui-tab-item">
+				<span class="mui-icon mui-icon-person"></span>
+				<span class="mui-tab-label">
+					我的
+				</span>
+			</a>
+
+
+		</nav>
+
+
+
+		<script src="js/mui.min.js"></script>
+
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+
+			var createIframe = function(el, opt) {
+				console.log(opt)
+				var elContainer = document.querySelector(el);
+				var wrapper = document.querySelector(".mui-iframe-wrapper");
+				if (!wrapper) {
+					// 创建wrapper 和 iframe
+					wrapper = document.createElement('div');
+					wrapper.className = 'mui-iframe-wrapper';
+					for (var i in opt.style) {
+						wrapper.style[i] = opt.style[i];
+					}
+					var iframe = document.createElement('iframe');
+					iframe.src = opt.url;
+					iframe.id = opt.id || opt.url;
+					iframe.name = opt.id;
+					wrapper.appendChild(iframe);
+					elContainer.appendChild(wrapper);
+				} else {
+					var iframe = wrapper.querySelector('iframe');
+					iframe.src = opt.url;
+					iframe.id = opt.id || opt.url;
+					iframe.name = iframe.id;
+				}
+			}
+
+
+			var index = 0,
+				subPages = [
+					'pages/home.html',
+					'pages/list.html',
+					'pages/discover.html',
+					'pages/message.html',
+					'pages/profile.html'
+				],
+				activeTab = subPages[index];
+
+			if (!mui.os.plus) {
+				// 创建iframe代替子页面
+				createIframe('.mui-content', {
+					url: activeTab,
+					style: {
+						top: '45px', //设置距离顶部的距离
+						bottom: '50px' //设置距离底部的距离
+					}
+				});
+			}
+
+			mui.plusReady(function() {
+				// 当前页面的webview窗口
+				let self = plus.webview.currentWebview();
+
+
+				for (let i = 0; i <= 4; i++) {
+					let sub = plus.webview.create(
+						subPages[i], // 子页URL
+						subPages[i], // 子页ID
+						{
+							top: '45px',
+							bottom: '50px'
+						}
+					)
+
+					if (i !== index) {
+						sub.hide()
+					}
+
+					// webview 对象填充到窗口
+					self.append(sub)
+				}
+			})
+
+			mui('#hm-bar').on('tap', 'a', function(e) {
+				let target = this.getAttribute('href')
+
+				console.log(target)
+
+				if (mui.os.plus) {
+					if(target === activeTab) {
+						return
+					}
+					
+					plus.webview.show(target)
+					plus.webview.hide(activeTab)
+					activeTab = target
+				} else {
+					// 创建iframe代替子页面
+					createIframe('.mui-content', {
+						url: target,
+						style: {
+							top: '45px', //设置距离顶部的距离
+							bottom: '50px' //设置距离底部的距离
+						}
+					});
+				}
+
+			})
+		</script>
+
+	</body>
+</html>
