@@ -3,6 +3,14 @@
 $white-color:#fff;
 $text-color:#333;
 $border-color:#ddd;
+$alarm-color:#ff1b0b;
+$success-color:#00de6b;
+$work-color:#9692ff;
+$yw-color:#ff6358;;
+$brown-color:#b25900;
+$lightBlue-color:#1296db;
+$failure-color:#ffaa00;
+$check-color:#55007f;
 
 * {
 	touch-action: none;
@@ -48,5 +56,60 @@ li {
 .swiper-slide {
 	img {
 		width: 100%;
+	}
+}
+
+
+.mui-content {
+	background-color: $white-color;
+}
+
+
+.hm-nav-icon {
+	.iconfont {
+		font-size: 2.2rem;
+	}	
+}
+
+.hm-icon-label {
+	font-size: 14px;
+}
+
+/* icon color */
+.alarm {
+	color: $alarm-color;
+}
+.success {
+	color: $success-color;
+}
+.work {
+	color: $work-color;
+}
+.yunwei {
+	color: $yw-color;
+}
+.brown {
+	color: $brown-color;
+}
+.light-blue {
+	color: $lightBlue-color;
+}
+.failure {
+	color: $failure-color;
+}
+.check {
+	color: $check-color;
+}
+
+.hm-notice {
+	position: relative;
+	overflow: hidden;
+	padding: 10px 0;
+	border-top: 0.5px solid $border-color;
+	border-bottom: 0.5px solid $border-color;
+	.iconfont {
+		margin-right: 5px;
+		font-size: 1.2rem;
+		color: $success-color;
 	}
 }

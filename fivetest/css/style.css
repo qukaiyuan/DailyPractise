@@ -43,4 +43,62 @@ li {
   width: 100%;
 }
 
+.mui-content {
+  background-color: #fff;
+}
+
+.hm-nav-icon .iconfont {
+  font-size: 2.2rem;
+}
+
+.hm-icon-label {
+  font-size: 14px;
+}
+
+/* icon color */
+.alarm {
+  color: #ff1b0b;
+}
+
+.success {
+  color: #00de6b;
+}
+
+.work {
+  color: #9692ff;
+}
+
+.yunwei {
+  color: #ff6358;
+}
+
+.brown {
+  color: #b25900;
+}
+
+.light-blue {
+  color: #1296db;
+}
+
+.failure {
+  color: #ffaa00;
+}
+
+.check {
+  color: #55007f;
+}
+
+.hm-notice {
+  position: relative;
+  overflow: hidden;
+  padding: 10px 0;
+  border-top: 0.5px solid #ddd;
+  border-bottom: 0.5px solid #ddd;
+}
+.hm-notice .iconfont {
+  margin-right: 5px;
+  font-size: 1.2rem;
+  color: #00de6b;
+}
+
 /*# sourceMappingURL=style.css.map */
