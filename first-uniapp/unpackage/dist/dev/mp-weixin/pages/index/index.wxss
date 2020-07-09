@@ -1,8 +1,11 @@
 
-.container {
-	padding: 20px;
-	font-size: 16px;
-	font-weight: bold;
-	line-height: 1.5;
+.bgrd.data-v-57280228 {
+	background-color: #DD524D;
+}
+.bgbl.data-v-57280228 {
+	background-color: #007AFF;
+}
+.bggr.data-v-57280228 {
+	background-color: #4CD964;
 }
 
