@@ -1,0 +1,8 @@
+
+.container {
+	padding: 20px;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 1.5;
+}
+

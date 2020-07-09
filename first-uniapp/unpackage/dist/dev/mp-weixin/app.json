@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/list/index",
+    "pages/detail/index"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "默认标题",
+    "navigationBarBackgroundColor": "#007AFF",
+    "backgroundColor": "#FFFFFF"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index"
+      },
+      {
+        "text": "列表",
+        "pagePath": "pages/list/index"
+      },
+      {
+        "text": "详情",
+        "pagePath": "pages/detail/index"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

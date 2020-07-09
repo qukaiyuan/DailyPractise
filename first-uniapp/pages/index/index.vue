@@ -1,8 +1,6 @@
 <template>
 	<view class="container">
-		<view class="page-section page-section-gap">
-			<uni-search-bar @confirm="handle" @input="changed" />
-		</view>
+		<view @click="open">点我跳转</view>
 	</view>
 </template>
 
@@ -14,6 +12,11 @@
 			}
 		},
 		methods: {
+			open:function(e) {
+				uni.navigateTo({
+					url:'../list/index'
+				})
+			},
 			handle:function(e) {
 				console.log(e.value)
 			},
@@ -26,10 +29,5 @@
 </script>
 
 <style>
-	.container {
-		padding: 20px;
-		font-size: 16px;
-		font-weight: bold;
-		line-height: 1.5;
-	}
+	
 </style>
