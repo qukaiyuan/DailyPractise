@@ -200,6 +200,41 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   components: {},
@@ -210,41 +245,39 @@ var _default =
     return {
       noticeInfo: '2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月',
 
-      banner: '',
+      banner: [
+      {
+        id: 'a',
+        title: '用电知识',
+        src: '/static/images/adv1.png' },
+
+      {
+        id: 'b',
+        title: '电工学堂',
+        src: '/static/images/adv2.png' },
+
+      {
+        id: 'c',
+        title: '节能技术',
+        src: '/static/images/adv3.png' },
+
+      {
+        id: 'd',
+        title: '企业新闻',
+        src: '/static/images/adv4.png' }],
+
+
       imgTo: '',
       workingTime: 0 };
 
   },
   onLoad: function onLoad() {
-    this.banner = [
-    {
-      id: 'a',
-      title: '用电知识',
-      src: '../../static/images/adv1.png' },
-
-    {
-      id: 'b',
-      title: '电工学堂',
-      src: '../../static/images/adv2.png' },
-
-    {
-      id: 'c',
-      title: '节能技术',
-      src: '../../static/images/adv3.png' },
-
-    {
-      id: 'd',
-      title: '企业新闻',
-      src: '../../static/images/adv4.png' }];
-
-
-
     this.imgTo = this.banner[0].title;
     this.workingTime = 660;
   },
   methods: {
     handleSwiper: function handleSwiper(e) {
-      //console.log(e.detail.current)
+      console.log(e.detail.current);
       //console.log(this.banner[e.detail.current].id)
       this.imgTo = this.banner[e.detail.current].title;
     },
