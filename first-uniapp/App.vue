@@ -13,6 +13,8 @@ export default {
 </script>
 
 <style>
+	/* 引入阿里云图标库 */
+	@import "./common/css/iconfont.css";
 /* 解决头条小程序组件内引入字体不生效的问题 */
 /* #ifdef MP-TOUTIAO */
 @font-face {

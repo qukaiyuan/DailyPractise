@@ -1,31 +1,47 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/list/index",
-    "pages/detail/index"
+    "pages/energy/index",
+    "pages/message/index",
+    "pages/user/index"
   ],
   "subPackages": [],
   "window": {
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "默认标题",
+    "navigationBarTitleText": "双成电管家",
     "navigationBarBackgroundColor": "#007AFF",
     "backgroundColor": "#FFFFFF"
   },
   "tabBar": {
+    "color": "#333",
+    "selectedColor": "#007AFF",
     "list": [
       {
         "text": "首页",
-        "pagePath": "pages/index/index"
+        "pagePath": "pages/index/index",
+        "iconPath": "static/icons/home.png",
+        "selectedIconPath": "static/icons/home-AV.png"
       },
       {
-        "text": "列表",
-        "pagePath": "pages/list/index"
+        "text": "能效",
+        "pagePath": "pages/energy/index",
+        "iconPath": "static/icons/cate.png",
+        "selectedIconPath": "static/icons/cate-AV.png"
       },
       {
-        "text": "详情",
-        "pagePath": "pages/detail/index"
+        "text": "消息",
+        "pagePath": "pages/message/index",
+        "iconPath": "static/icons/mes.png",
+        "selectedIconPath": "static/icons/mes-AV.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/user/index",
+        "iconPath": "static/icons/user.png",
+        "selectedIconPath": "static/icons/user-AV.png"
       }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap47.json"
 }

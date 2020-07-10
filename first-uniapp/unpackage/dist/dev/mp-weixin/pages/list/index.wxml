@@ -1,1 +1,0 @@
-<view class="container"><view data-event-opts="{{[['tap',[['backhome',['$event']]]]]}}" class="uni-link" bindtap="__e">返回首页</view></view>
