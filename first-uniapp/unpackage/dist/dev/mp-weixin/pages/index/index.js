@@ -234,7 +234,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
-//
 var _default =
 {
   components: {},
@@ -245,26 +244,33 @@ var _default =
     return {
       noticeInfo: '2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月',
 
+
+      indicatorDots: true,
+      autoplay: true,
+      interval: 2000,
+      duration: 500,
+
+
       banner: [
       {
         id: 'a',
         title: '用电知识',
-        src: '/static/images/adv1.png' },
+        src: '/static/images/a1.png' },
 
       {
         id: 'b',
         title: '电工学堂',
-        src: '/static/images/adv2.png' },
+        src: '/static/images/a2.png' },
 
       {
         id: 'c',
         title: '节能技术',
-        src: '/static/images/adv3.png' },
+        src: '/static/images/a3.png' },
 
       {
         id: 'd',
         title: '企业新闻',
-        src: '/static/images/adv4.png' }],
+        src: '/static/images/a4.png' }],
 
 
       imgTo: '',
@@ -277,12 +283,12 @@ var _default =
   },
   methods: {
     handleSwiper: function handleSwiper(e) {
-      console.log(e.detail.current);
+      //console.log(e.detail.current)
       //console.log(this.banner[e.detail.current].id)
       this.imgTo = this.banner[e.detail.current].title;
     },
     handleSwiperItem: function handleSwiperItem(item) {
-      console.log(item);
+      //console.log(item)
     } } };exports.default = _default;
 
 /***/ }),

@@ -1,7 +1,10 @@
 import Vue from 'vue'
 import App from './App'
+import MySwiper from './components/myswiper/myswiper.vue'
 
 Vue.config.productionTip = false
+
+Vue.component('myswiper',MySwiper)
 
 App.mpType = 'app'
 

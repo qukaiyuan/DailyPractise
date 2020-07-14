@@ -42,6 +42,7 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap98.json"
+  "usingComponents": {
+    "myswiper": "/components/myswiper/myswiper"
+  }
 }

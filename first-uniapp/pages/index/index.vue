@@ -8,26 +8,25 @@
 		<view class="page-section swiper">
 			<swiper 
 			class="swiper"
-			:indicator-dots="true" 
-			:autoplay="true" 
-			:interval="3000" 
-			:circular="true"
-			:duration="1000"
+			circular 
+			:indicator-dots="indicatorDots" 
+			:autoplay="autoplay" 
+			:interval="interval" 
+			:duration="duration"
 			@change="handleSwiper"
 			>
-				<view 
-				v-for="item in banner" 
-				:key="item.id">
-					<swiper-item @click="handleSwiperItem(item)">
-						<view class="swiper-item">
-							<image
-							class="scgj-full-image" 
-							:src="item.src" 
-							mode="aspectFill"
-							></image>
-						</view>
-					</swiper-item>
-				</view>
+				<swiper-item
+				v-for="item in banner"
+				:key="item.id"
+				@click="handleSwiperItem(item)">
+					<view class="swiper-item">
+						<image
+						class="scgj-full-image" 
+						:src="item.src" 
+						mode="aspectFill"
+						></image>
+					</view>
+				</swiper-item>
 			</swiper>
 		</view>
 		
@@ -108,26 +107,33 @@
 			return {
 				noticeInfo:'2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月2020年9月',
 				
+				
+				indicatorDots: true,
+				autoplay: true,
+				interval: 2000,
+				duration: 500,
+				
+				
 				banner:[
 					{
 						id:'a',
 						title:'用电知识',
-						src:'/static/images/adv1.png'
+						src:'/static/images/a1.png'
 					},
 					{
 						id:'b',
 						title:'电工学堂',
-						src:'/static/images/adv2.png'
+						src:'/static/images/a2.png'
 					},
 					{
 						id:'c',
 						title:'节能技术',
-						src:'/static/images/adv3.png'
+						src:'/static/images/a3.png'
 					},
 					{
 						id:'d',
 						title:'企业新闻',
-						src:'/static/images/adv4.png'
+						src:'/static/images/a4.png'
 					}
 				],
 				imgTo: '',
@@ -140,12 +146,12 @@
 		},
 		methods: {
 			handleSwiper:function(e) {
-				console.log(e.detail.current)
+				//console.log(e.detail.current)
 				//console.log(this.banner[e.detail.current].id)
 				this.imgTo = this.banner[e.detail.current].title
 			},
 			handleSwiperItem:function(item) {
-				console.log(item)
+				//console.log(item)
 			}
 		}
 	}
