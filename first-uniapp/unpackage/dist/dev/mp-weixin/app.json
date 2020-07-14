@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/user/login",
     "pages/index/index",
     "pages/energy/index",
     "pages/message/index",
@@ -44,5 +45,6 @@
   },
   "usingComponents": {
     "myswiper": "/components/myswiper/myswiper"
-  }
+  },
+  "sitemapLocation": "sitemap94.json"
 }

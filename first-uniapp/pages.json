@@ -1,6 +1,12 @@
 {
 	"pages": [
 		{
+			"path": "pages/user/login",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		}, 
+		{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "双成电管家"

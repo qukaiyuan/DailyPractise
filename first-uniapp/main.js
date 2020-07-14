@@ -1,8 +1,11 @@
 import Vue from 'vue'
 import App from './App'
 import MySwiper from './components/myswiper/myswiper.vue'
+import iGlobal from './common/lib/global.js'
 
 Vue.config.productionTip = false
+
+Vue.prototype.iGlobal = iGlobal
 
 Vue.component('myswiper',MySwiper)
 
