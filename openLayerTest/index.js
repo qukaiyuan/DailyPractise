@@ -1,60 +1,46 @@
+import 'ol/ol.css';
 import Map from 'ol/Map';
 import View from 'ol/View';
-import TileLayer from 'ol/layer/Tile';
-import OSM from 'ol/source/OSM';
-//import XYZ from 'ol/source/XYZ';
-// import ZoomSlider from 'ol/control/ZoomSlider'
-// import ZoomToExtent from 'ol/control/ZoomToExtent'
-import { fromLonLat } from 'ol/proj'
+import KML from 'ol/format/KML';
+import {Tile as TileLayer, Image as ImageLayer, Heatmap as HeatmapLayer} from 'ol/layer';
+//import {OSM, ImageArcGISRest} from 'ol/source';
+//import { fromLonLat } from 'ol/proj'
+//import Feature from 'ol/Feature'
+//import Point from 'ol/geom/Point'
+import Stamen from 'ol/source/Stamen'
+import VectorSource from 'ol/source/Vector'
 
+//var url = 'https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Specialty/ESRI_StateCityHighway_USA/MapServer';
 
-var map = new Map({
-  view: new View({
-    center: [12950000, 4860000],
-    zoom: 8,
-    minZoom:3,
-    maxZoom:12
-  }),
-  layers: [
-    new TileLayer({
-      source: new OSM()
+var vector = new HeatmapLayer({
+  source:new VectorSource({
+    url:'./data/2012_Earthquakes_Mag5.kml',
+    format: new KML({
+      extractStyles:false
     })
-  ],
-  target: 'map'
-});
+  }),
+  blur:parseInt(15,10),
+  radius:parseInt(5,10),
+  weight: function(feature) {
+    var name = feature.get('name')
+    var magnitude = parseFloat(name.substr(2))
+    return magnitude - 5
+  }
+})
 
-var view = map.getView()
-var zoom = view.getZoom()
-var center = view.getCenter()
-var rotation = view.getRotation()
 
-document.getElementById('zoom-out').onclick = function() {
-  var view = map.getView()
-  var zoom = view.getZoom()
-
-  view.setZoom(zoom - 1)
-}
-
-document.getElementById('zoom-in').onclick = function() {
-  var view = map.getView()
-  var zoom = view.getZoom()
-
-  view.setZoom(zoom + 1)
-}
-
-document.getElementById('to').onclick = function() {
-  var view = map.getView()
-  var wh = fromLonLat([114.31667,30.51667])
-
-  view.animate({
-    easing: 'bounce',
-    duration: 3000
+var raster = new TileLayer({
+  source: new Stamen({
+    layer:'terrain'
   })
+})
 
-  view.setCenter(wh)
-}
-
-document.getElementById('reset').onclick = function() {
-  view.setCenter(center)
-  view.setZoom(zoom)
-}
+var layers = [raster, vector];
+var map = new Map({
+  layers: layers,
+  target: 'map',
+  view: new View({
+    center: [0, 0],
+    zoom: 8
+  })
+});
